@@ -11,8 +11,8 @@ interface DAO {
     //Functions that are used to retrieve and set data in DB
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun addStudent(student: Student)
+    suspend fun addStudent(student: Student)
 
     @Query("SELECT*FROM student_table ORDER BY id ASC")
-    fun getAllData():Student
+    fun getAllData():List<Student>
 }

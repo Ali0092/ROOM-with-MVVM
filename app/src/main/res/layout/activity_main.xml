@@ -7,100 +7,17 @@
     android:padding="10dp"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+   <androidx.fragment.app.FragmentContainerView
+       android:id="@+id/nav_host_fragment_container"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:name="androidx.navigation.fragment.NavHostFragment"
+       app:defaultNavhost="true"
+       app:navGraph="@navigation/nav_graph"
 
-        <EditText
-            android:id="@+id/setId"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Student ID"
-            android:textAlignment="center" />
-
-        <EditText
-            android:id="@+id/setName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Name"
-            android:textAlignment="center" />
-
-        <EditText
-            android:id="@+id/setFName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Father Name"
-            android:textAlignment="center" />
-
-        <EditText
-            android:id="@+id/setGrade"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Grade"
-            android:textAlignment="center" />
-
-        <Button
-            android:id="@+id/save"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="SAVE" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="140dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:id="@+id/getId_"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Student ID"
-            android:textAlignment="center"
-            android:textSize="25sp" />
-
-        <TextView
-            android:id="@+id/getName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Name"
-            android:textAlignment="center"
-            android:textSize="25sp" />
-
-        <TextView
-            android:id="@+id/getFName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Father Name"
-            android:textAlignment="center"
-            android:textSize="25sp" />
-
-        <TextView
-            android:id="@+id/getGrade"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Grade"
-            android:textAlignment="center"
-            android:textSize="25sp" />
-
-        <Button
-            android:id="@+id/load"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="LOAD" />
-    </LinearLayout>
-
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.5"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
