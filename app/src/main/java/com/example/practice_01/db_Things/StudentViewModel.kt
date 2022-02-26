@@ -12,8 +12,8 @@ class StudentViewModel(application: Application):AndroidViewModel(application) {
 
 //ViewModel that connects the data and the UI elements
 
-    private lateinit var readAllData:List<Student>
-    private lateinit var repository:StudentRepository
+    private  var readAllData:List<Student>
+    private  var repository:StudentRepository
 
     init {
         val studentDao=StudentDataBase.getDatabase(application).getDao()

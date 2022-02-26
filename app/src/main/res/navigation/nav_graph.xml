@@ -2,25 +2,23 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
     app:startDestination="@id/listFragment">
-
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.example.practice_01.ListFragment"
-        android:label="fragment_list"
-        tools:layout="@layout/fragment_list" >
+        android:name="com.example.practice_01.fragments.list.ListFragment"
+        android:label="List"
+        tools:layout="@layout/fragment_list">
         <action
-            android:id="@+id/action_listFragment_to_addFragment"
-            app:destination="@id/addFragment" />
+            android:id="@+id/action_listFragment_to_addStudentFragment2"
+            app:destination="@id/addStudentFragment" />
     </fragment>
     <fragment
-        android:id="@+id/addFragment"
-        android:name="com.example.practice_01.AddFragment"
-        android:label="fragment_add"
-        tools:layout="@layout/fragment_add" >
+        android:id="@+id/addStudentFragment"
+        android:name="com.example.practice_01.fragments.add.AddStudentFragment"
+        android:label="Add"
+        tools:layout="@layout/fragment_add_student">
         <action
-            android:id="@+id/action_addFragment_to_listFragment"
+            android:id="@+id/action_addStudentFragment_to_listFragment"
             app:destination="@id/listFragment" />
     </fragment>
 </navigation>

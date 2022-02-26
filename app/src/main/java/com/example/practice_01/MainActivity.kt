@@ -2,13 +2,10 @@ package com.example.practice_01
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.DocumentsContract
-import android.widget.Toast
-import androidx.room.Room
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.practice_01.databinding.ActivityMainBinding
-import com.example.practice_01.db_Things.Student
-import com.example.practice_01.db_Things.StudentDataBase
-import java.math.RoundingMode.valueOf
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,11 +13,13 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding= ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_frag) as NavHostFragment
+        val navController = navHostFragment.navController
 
-
-
+        setupActionBarWithNavController(navController)
     }
 
 }
+
