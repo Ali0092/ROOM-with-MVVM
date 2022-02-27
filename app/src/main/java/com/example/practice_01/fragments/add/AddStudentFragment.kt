@@ -11,21 +11,22 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.practice_01.R
 import com.example.practice_01.databinding.FragmentAddStudentBinding
-import com.example.practice_01.db_Things.Student
-import com.example.practice_01.db_Things.StudentViewModel
+import com.example.practice_01.model.Student
+import com.example.practice_01.viewModel.StudentViewModel
 
 class AddStudentFragment : Fragment(R.layout.fragment_add_student) {
 
     private lateinit var binding: FragmentAddStudentBinding
-    private lateinit var studentViewModel:StudentViewModel
+    private lateinit var studentViewModel: StudentViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        //initialization of the lateinit.. variables..
         binding= FragmentAddStudentBinding.inflate(inflater,container,false)
-        studentViewModel=ViewModelProvider(this).get(StudentViewModel::class.java)
+        studentViewModel=ViewModelProvider(this)[StudentViewModel::class.java]
 
         binding.add.setOnClickListener {
             addStudentDataInDB()
@@ -42,12 +43,12 @@ class AddStudentFragment : Fragment(R.layout.fragment_add_student) {
      val grade=binding.grade.text.toString()
 
      if(checkInput(id.toString(),name,fname,grade)){
-         val s=Student(Integer.parseInt(id.toString()),name,fname,grade)
+         val s= Student(Integer.parseInt(id.toString()),name,fname,grade)
          studentViewModel.addStudent(s)
      }
      else{ Toast.makeText(context,"Fields must not be Empty..", Toast.LENGTH_LONG).show() }
     }
-
+//Func. that returns true if all the fields are filled...
     private fun checkInput(id:String,name:String,fname:String,grade:String): Boolean{
         return !((TextUtils.isEmpty(id)) && (TextUtils.isEmpty(name)) && (TextUtils.isEmpty(fname)) && (TextUtils.isEmpty(grade)))
     }

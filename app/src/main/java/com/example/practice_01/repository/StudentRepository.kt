@@ -1,6 +1,8 @@
-package com.example.practice_01.db_Things
+package com.example.practice_01.repository
 
 import androidx.lifecycle.LiveData
+import com.example.practice_01.db_Things.DAO
+import com.example.practice_01.model.Student
 
 class StudentRepository(private val dao: DAO) {
 
@@ -11,6 +13,14 @@ class StudentRepository(private val dao: DAO) {
 
      fun addStudents(student: Student){
         dao.addStudent(student)
+    }
+
+    fun updateStudnet(student: Student){
+        dao.updateStudent(student)
+    }
+
+    fun deleteStudent(student: Student){
+        dao.deleteStudent(student)
     }
 
 }

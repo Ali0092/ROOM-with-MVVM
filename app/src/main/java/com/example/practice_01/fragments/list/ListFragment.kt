@@ -11,7 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.practice_01.R
 import com.example.practice_01.databinding.FragmentListBinding
-import com.example.practice_01.db_Things.StudentViewModel
+import com.example.practice_01.viewModel.StudentViewModel
 
 class ListFragment : Fragment(R.layout.fragment_list) {
 
@@ -32,10 +32,12 @@ class ListFragment : Fragment(R.layout.fragment_list) {
         binding.recView.layoutManager=LinearLayoutManager(requireContext())
 
         studentViewModel= ViewModelProvider(this)[StudentViewModel::class.java]
+        //Observing LiveData from ViewModel..
         studentViewModel.readAllData.observe(viewLifecycleOwner, Observer { user->
             adapter.DataChanges(user)
         })
 
+        //FloatingActionButton clicked..
         binding.floatingActionButton.setOnClickListener {
             this.findNavController().navigate(R.id.action_listFragment_to_addStudentFragment2)
         }

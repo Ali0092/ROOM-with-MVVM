@@ -2,7 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'androidx.navigation.safeargs'
-    //id 'kotlin-android-extensions'
+    id 'kotlin-parcelize' // For Custom parcel(sending custom data using safeArgs..)
     id 'kotlin-kapt'
 }
 
@@ -65,7 +65,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-common-java8:2.4.1"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1"
 
-
+    //For Kotlin Coroutines...
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.30"
     api "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
     api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2"

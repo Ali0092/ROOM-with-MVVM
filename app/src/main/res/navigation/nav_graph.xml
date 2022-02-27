@@ -11,6 +11,9 @@
         <action
             android:id="@+id/action_listFragment_to_addStudentFragment2"
             app:destination="@id/addStudentFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_updateFragment"
+            app:destination="@id/updateFragment" />
     </fragment>
     <fragment
         android:id="@+id/addStudentFragment"
@@ -20,5 +23,17 @@
         <action
             android:id="@+id/action_addStudentFragment_to_listFragment"
             app:destination="@id/listFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateFragment"
+        android:name="com.example.practice_01.fragments.update.UpdateFragment"
+        android:label="Update"
+        tools:layout="@layout/fragment_update" >
+        <action
+            android:id="@+id/action_updateFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+        <argument
+            android:name="currentItem"
+            app:argType="com.example.practice_01.model.Student" />
     </fragment>
 </navigation>
